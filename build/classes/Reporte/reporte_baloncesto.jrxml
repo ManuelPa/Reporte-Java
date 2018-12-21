@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="140a872e-1df9-4565-88cb-e96729e58e00">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString language="SQL">
+		<![CDATA[SELECT
+     baloncesto.`Nombre` AS baloncesto_Nombre,
+     baloncesto.`Apellidos` AS baloncesto_Apellidos,
+     baloncesto.`edad` AS baloncesto_edad,
+     baloncesto.`nif` AS baloncesto_nif
+FROM
+     `baloncesto` baloncesto]]>
+    </queryString>
+    <field name="baloncesto_Nombre" class="java.lang.String"/>
+    <field name="baloncesto_Apellidos" class="java.lang.String"/>
+    <field name="baloncesto_edad" class="java.lang.Integer"/>
+    <field name="baloncesto_nif" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="79" uuid="12eadd31-6f78-45f5-806e-42706ca73b4e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="34" isBold="true"/>
+                </textElement>
+                <text><![CDATA[JUGADORES DE BALONCESTO]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="23" splitType="Stretch">
+            <line>
+                <reportElement x="1" y="19" width="555" height="1" uuid="8c65d06a-6772-45c0-b5d7-30b707812d82"/>
+            </line>
+            <staticText>
+                <reportElement x="145" y="0" width="144" height="20" uuid="6202493b-149d-4add-95ca-635018c807da"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[APELLIDOS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="1" y="0" width="144" height="20" uuid="c26b4d28-731e-4e0c-9647-9522ada441b9"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NOMBRE]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="289" y="0" width="144" height="20" uuid="624ca90a-4020-4dbb-ab46-ef96cdc0dc5f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NIF]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="433" y="0" width="122" height="20" uuid="afc73aec-4deb-4a44-a012-8250263fc1a5"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[EDAD]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="22" splitType="Stretch">
+            <textField>
+                <reportElement x="1" y="0" width="144" height="20" uuid="72b3ee03-570f-469a-9948-ff133e416d5c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{baloncesto_Nombre}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="145" y="0" width="144" height="20" uuid="faae0257-e154-464a-b574-7e98ed97e3b6"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{baloncesto_Apellidos}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="289" y="0" width="144" height="20" uuid="aa1a3886-e185-4e11-867f-a59b4345f3ff"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{baloncesto_nif}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="433" y="0" width="123" height="20" uuid="6c2cb998-7faf-4d04-bd9f-47a8aac4d54e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{baloncesto_edad}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

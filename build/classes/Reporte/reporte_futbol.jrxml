@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7319acab-2fe2-4098-80d9-65757353cb7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     futbol.`Nombre` AS futbol_Nombre,
+     futbol.`Apellidos` AS futbol_Apellidos,
+     futbol.`edad` AS futbol_edad,
+     futbol.`nif` AS futbol_nif
+FROM
+     `futbol` futbol]]>
+	</queryString>
+	<field name="futbol_Nombre" class="java.lang.String"/>
+	<field name="futbol_Apellidos" class="java.lang.String"/>
+	<field name="futbol_edad" class="java.lang.Integer"/>
+	<field name="futbol_nif" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="555" height="79" uuid="21dcb7e4-661f-4c9d-b83b-d208fe19bb22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUGADORES DE FUTBOL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="19" width="555" height="1" uuid="d0f2277e-a9aa-4ce2-94f0-84a0aa1bd32d"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="0" width="144" height="20" uuid="5612ec1e-7c81-4fdb-a882-0ed304f707eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="144" height="20" uuid="8c88733b-8626-4a9c-9b2a-f3a36266a967"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="144" height="20" uuid="d9d577be-bce4-4834-993a-fb124bb680ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="0" width="122" height="20" uuid="fc64974e-97ea-4084-9cdd-32f20999e896"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="432" y="0" width="123" height="20" uuid="35cbd6aa-7567-4d7c-87db-6a12fb59b4db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{futbol_edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="144" height="20" uuid="428f7066-65fb-40f9-b94c-d2518b05830d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{futbol_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="144" height="20" uuid="e836d649-0b39-4084-9476-773402c4ab8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{futbol_nif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="144" height="20" uuid="e29379e5-2857-4e01-a866-30666be254f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{futbol_Apellidos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

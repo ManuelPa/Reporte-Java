@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ce75f5a-ba06-4203-897f-f7bbff36a5cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tenis.`Nombre` AS tenis_Nombre,
+     tenis.`Apellidos` AS tenis_Apellidos,
+     tenis.`edad` AS tenis_edad,
+     tenis.`nif` AS tenis_nif
+FROM
+     `tenis` tenis]]>
+	</queryString>
+	<field name="tenis_Nombre" class="java.lang.String"/>
+	<field name="tenis_Apellidos" class="java.lang.String"/>
+	<field name="tenis_edad" class="java.lang.Integer"/>
+	<field name="tenis_nif" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="ab90225f-1ab8-43e7-a256-2bef39b68473"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUGADORES DE TENIS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="144" y="0" width="144" height="20" uuid="7daada24-8fec-4698-861e-476fb1e01184"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="144" height="20" uuid="6a0c6504-34aa-4946-b6c9-2a4b94646629"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="144" height="20" uuid="00009f2c-435b-4f59-9e63-95b6f4e79574"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="0" width="122" height="20" uuid="c7c1e397-4e55-4f4e-8c1f-33d1fd82393c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDAD]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="bc3076a3-a913-401d-a0f8-a6134cc5225c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="432" y="0" width="123" height="20" uuid="35230540-934f-4d80-af44-18460bb3198b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tenis_edad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="144" height="20" uuid="d46f240f-0770-4283-af6b-caca463b2a61"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tenis_nif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="144" height="20" uuid="5d0f0e7e-4619-4509-9d6f-e3cb39a6e5e0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tenis_Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="144" height="20" uuid="19b7f9ae-9d57-4784-9f94-4c72c7d0c782"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tenis_Nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
